@@ -522,7 +522,7 @@ $("form").submit(function(e){
     	var dataPanelId = "";
 			$('.panel').on('click', function(){
 			var panelId = $(this).attr('data-panelid')
-				var value = $(this).val(panelId);
+				var value = $(this).attr('value');
 				console.log(value);
 	
 			alert(value);
