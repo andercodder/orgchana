@@ -26,6 +26,46 @@ include_once  'send_email/send_email_rent.php';
 				background: #14387E ;
 
 		}
+
+		.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 		</style>
 	</head>
 
@@ -244,12 +284,54 @@ include_once  'send_email/send_email_rent.php';
 						<div class="row">
 							<br>
 							<div class="col-sm-12">
+								<div class="row">
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" value="19950"  >							
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="econo" />
+									
+									<label for="econo"><img src="icon/economico.png" alt=""style="margin-top:-20px;"><p style="margin-top:-20px;"> económico </p> <p style="margin-top:-25px;">A partir 19.950 AKZ </p></label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" value="36750">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
+									<label for="suv"><img src="icon/suv.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">  SUV </p> <p style="margin-top:-25px;">A partir 36.750 AKZ </p> </label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" value="36750">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
+									<label for="minivan"><img src="icon/pick-up.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;" >Pick Up</p><p style="margin-top:-25px;"> A partir 36.750 AKZ </p> </label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" value="57750" >
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
+									<label for="wagon"><img src="icon/suv-executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Suv Executivo </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p>  </label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" value="68250">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
+									<label for="limousine"><img src="icon/executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">Executivo</p> <p style="margin-top:-25px;"> A partir 68.250 AKZ </p> </label>
+								</fieldset>
+							</div>
+
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" value="57750">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
+									<label for="classic"><img src="icon/classico.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Clássico </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p> </label>
+								</fieldset>
+							</div>
+
+
+						</div>
 								<h2 style="text-align:center;">Simule o Valor a Pagar</h2>
 							</div>
 
 						<div class="col-sm-4">
 							<fieldset>
-								Valor Da Categoria <input type="number" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" />
+								Valor Da Categoria <input type="text" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" />
 							</fieldset></div>
 								<div class="col-sm-4">
 								<fieldset>
@@ -349,9 +431,11 @@ include_once  'send_email/send_email_rent.php';
 		<script src="js/picker.time.js"></script>
 		<script src="js/uber-google-maps.js"></script>
 		<script src="js/settings.js"></script>
+		
+
 
 		<script type="text/javascript">
-		var previsaoDoValor;
+		/*var previsaoDoValor;
 		function pagar(previsaoDoValor){
 			var valorDaCategoria = parseInt(document.getElementById("valorDaCategoria").value);
 			var numeroDeDias = parseInt(document.getElementById("numeroDeDias").value);
@@ -376,9 +460,10 @@ include_once  'send_email/send_email_rent.php';
 			}
 			//return pagar();
 
-		}
-
-
+		}*/
+		
+</script>
+<script type="text/javascript">
 
 // validation form
 $("form").submit(function(e){
@@ -430,6 +515,31 @@ $("form").submit(function(e){
 })
 		</script>
 		<!-- Javascripts end -->
+
+<script >
+	$(function(){
+    	var content = 123;
+    	var dataPanelId = "";
+			$('.panel').on('click', function(){
+			var panelId = $(this).attr('data-panelid')
+				var value = $(this).val(panelId);
+				console.log(value);
+	
+			alert(value);
+			
+			alert(panelId);
+			
+			//$('#'+panelId).toggle();
+           // $('#valorDaCategoria ').val();
+
+		});
+
+
+	});
+
+
+
+</script>
 
 	</body>
 </html>

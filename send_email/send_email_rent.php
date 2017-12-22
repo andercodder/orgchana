@@ -35,7 +35,7 @@ if ($_POST) {
   }
   //verificar se Existem erros na variavel erro
   if ($erro != "") {
-    $erro = '<div class="alert alert-danger" role="alert"><p>Existem erros no seu formulario, corriga-os e tente de novo</p>' . $erro . '<div>';
+    $erro = '<div class="alert alert-danger" role="alert" alert-dismissable aria-label="Close" aria-hidden="true">&times;<p>Existem erros no seu formulario, corriga-os e tente de novo</p>' . $erro . '<div>';
   }
   /*se a conexão estiver boa enviar o email */
   else {
@@ -52,13 +52,13 @@ if ($_POST) {
     $subject = $_POST['mensagem'];
     $mailBody = "Nome: $nome\n $numero\n $marca\n $carros\n $date\n $dateFinal\n $time";
     if(mail($emailTo, $headers, $mailBody, $subject)){
-      $sucessosms = '<div class="alert alert-success alert-dismissable" role="alert">
+      $sucessosms = '<div class="alert alert-success alert-dismissable"  role="alert" class="close" aria-label="Close">
       <strong>A sua mensagem foi enviada com sucesso</strong>
-      <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close" aria-hidden="true">&times;</a>
       </div>';
     }
     else {
-      $erro = '<div class=alert alert-danger role="alert">A sua mensagem não pode ser enviada 1</div>';
+      $erro = '<div class=alert alert-danger role="alert">A sua mensagem não pode ser enviada </div>';
     }
   }
 }
