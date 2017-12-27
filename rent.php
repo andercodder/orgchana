@@ -16,6 +16,9 @@ include_once  'send_email/send_email_rent.php';
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="description" content="organizações Chana - Rent a car">
 		<meta name="author" content="DSI - orgchana">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
 		<title>rent</title>
 		<link rel="shortcut icon" href="img/favicon.png">
 
@@ -281,53 +284,52 @@ include_once  'send_email/send_email_rent.php';
 
 
 						<!-- Previsão do valor -->
+						<h2 style="text-align:center;">Simule o Valor a Pagar</h2>
+
 						<div class="row">
 							<br>
 							<div class="col-sm-12">
 								<div class="row">
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" value="19950"  >							
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" value="19950" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="econo" />
-									
-									<label for="econo"><img src="icon/economico.png" alt=""style="margin-top:-20px;"><p style="margin-top:-20px;"> económico </p> <p style="margin-top:-25px;">A partir 19.950 AKZ </p></label>
+
+									<label for="econo"><img src="icon/economico.png"  style="margin-top:-20px;"><p style="margin-top:-20px;"> económico </p> <p style="margin-top:-25px;">A partir 19.950 AKZ </p></label>
 								</fieldset>
 							</div>
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" value="36750">
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" value="36750" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
 									<label for="suv"><img src="icon/suv.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">  SUV </p> <p style="margin-top:-25px;">A partir 36.750 AKZ </p> </label>
 								</fieldset>
 							</div>
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" value="36750">
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" value="36750" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
 									<label for="minivan"><img src="icon/pick-up.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;" >Pick Up</p><p style="margin-top:-25px;"> A partir 36.750 AKZ </p> </label>
 								</fieldset>
 							</div>
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" value="57750" >
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" value="57750" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
 									<label for="wagon"><img src="icon/suv-executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Suv Executivo </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p>  </label>
 								</fieldset>
 							</div>
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" value="68250">
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" value="68250" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
 									<label for="limousine"><img src="icon/executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">Executivo</p> <p style="margin-top:-25px;"> A partir 68.250 AKZ </p> </label>
 								</fieldset>
 							</div>
 
-							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" value="57750">
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" value="57750" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
 									<label for="classic"><img src="icon/classico.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Clássico </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p> </label>
 								</fieldset>
 							</div>
-
-
-						</div>
-								<h2 style="text-align:center;">Simule o Valor a Pagar</h2>
 							</div>
+						</div>
 
 						<div class="col-sm-4">
 							<fieldset>
@@ -424,15 +426,15 @@ include_once  'send_email/send_email_rent.php';
 		<!-- Footer end -->
 
 		<!-- Javascripts start -->
+
 		<script src="js/jquery-3.1.1.js"></script>
+		 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="js/owl.carousel.js"></script>
 		<script src="js/picker.js"></script>
 		<script src="js/picker.date.js"></script>
 		<script src="js/picker.time.js"></script>
 		<script src="js/uber-google-maps.js"></script>
 		<script src="js/settings.js"></script>
-		
-
 
 		<script type="text/javascript">
 		/*var previsaoDoValor;
@@ -461,7 +463,7 @@ include_once  'send_email/send_email_rent.php';
 			//return pagar();
 
 		}*/
-		
+
 </script>
 <script type="text/javascript">
 
@@ -518,26 +520,44 @@ $("form").submit(function(e){
 
 <script >
 	$(function(){
-    	var content = 123;
-    	var dataPanelId = "";
-			$('.panel').on('click', function(){
+    	$('.panel').on('click', function(){
 			var panelId = $(this).attr('data-panelid')
 				var value = $(this).attr('value');
-				console.log(value);
-	
-			alert(value);
-			
-			alert(panelId);
-			
-			//$('#'+panelId).toggle();
-           // $('#valorDaCategoria ').val();
+				$('#'+panelId).toggle();
+							$('#valorDaCategoria ').val(value);
 
+			//alert(value);
+
+		//	alert(panelId);
 		});
-
-
 	});
 
+	/*TOOLTIP*/
+	 $( document ).tooltip({
+  show: { effect: "shake", duration: 600 },
+	position: { my: "top", at: "top-30" }
+});
+	// $(document).ready(function(){
+	//         tooltip();
+	//     });
 
+	// autoplay owl
+	/*AUTOPLAY FOR OWL */
+	var owl = $('.owl-carousel');
+	owl.owlCarousel({
+	    items:1,
+	    loop:true,
+	    margin:10,
+	    autoplay:true,
+	    autoplayTimeout:7000,
+	    autoplayHoverPause:true
+	});
+	$('.play').on('click',function(){
+	    owl.trigger('play.owl.autoplay',[7000])
+	})
+	$('.stop').on('click',function(){
+	    owl.trigger('stop.owl.autoplay')
+	})
 
 </script>
 
