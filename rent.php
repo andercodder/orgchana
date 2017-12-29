@@ -26,49 +26,37 @@ include_once  'send_email/send_email_rent.php';
 		<link href="css/style.css" rel="stylesheet">
 		<style>
 		.booking-form .car-type label {
-				background: #14387E ;
+			background: #14387E ;
 
 		}
 
-		.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
+		.picker__header  {
+			background-color:#14387E;
+		}
+		.picker__table th {
+			background-color:#14387E;
+		}
+		.picker__button--today,.picker__button--close, .picker__button--clear{
+			background-color:#14387E;
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 1s;
-}
+		}
+		.picker__day--today{
+			border: 1px solid #14387E;
+		}
+		.picker__day:hover{
+			color:#14387E;
+		}
+		.picker__day picker__day--infocus{
+			color:#14387E;
+		}
+		.picker__list li:hover{
+			color:#14387E;
+		}
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
+		.fechar{
+			text-align: right;
+			margin-top: -40px;
+		}
 		</style>
 	</head>
 
@@ -185,111 +173,7 @@ include_once  'send_email/send_email_rent.php';
 					</div>
 					<form class="booking-form" name="sentMessage" id="contactForm" method="post">
 						<div class="row">
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="econo" />
-									<label for="econo"><img src="icon/economico.png" alt=""style="margin-top:-20px;"><p style="margin-top:-20px;"> económico </p> <p style="margin-top:-25px;">A partir 19.950 AKZ </p></label>
-								</fieldset>
-							</div>
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="suv" />
-									<label for="suv"><img src="icon/suv.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">  SUV </p> <p style="margin-top:-25px;">A partir 36.750 AKZ </p> </label>
-								</fieldset>
-							</div>
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="minivan" />
-									<label for="minivan"><img src="icon/pick-up.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;" >Pick Up</p><p style="margin-top:-25px;"> A partir 36.750 AKZ </p> </label>
-								</fieldset>
-							</div>
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="wagon" />
-									<label for="wagon"><img src="icon/suv-executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Suv Executivo </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p>  </label>
-								</fieldset>
-							</div>
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="limousine" />
-									<label for="limousine"><img src="icon/executivo.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;">Executivo</p> <p style="margin-top:-25px;"> A partir 68.250 AKZ </p> </label>
-								</fieldset>
-							</div>
 
-							<div class="col-xs-6 col-sm-2">
-								<fieldset class="car-type">
-									<input type="checkbox" name="car-type" id="classic" />
-									<label for="classic"><img src="icon/classico.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Clássico </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p> </label>
-								</fieldset>
-							</div>
-
-
-						</div>
-						<div class="row">
-							<div id="erro">
-				        <?php echo $erro.$sucessosms; ?>
-				      </div>
-							<div class="col-sm-3">
-								<fieldset>
-									<input type="text" name="nome" placeholder="Nome *" required="Preencha o Campo nome." id="nome"/>
-								</fieldset>
-								<fieldset>
-									<input type="email" name="email" placeholder="Email *" required data-validation-required-message="Preencha o Campo Email." id="email" />
-								</fieldset>
-							</div>
-							<div class="col-sm-3">
-								<fieldset>
-									<input type="text" name="marca" placeholder="Marca do Carro *" required data-validation-required-message="Preencha o Campo Marca do carro." id="marca"/>
-								</fieldset>
-								<fieldset>
-										<input type="text" name="time" placeholder="Hora do aluguel *" class="timepicker" required  id="time"/>
-								</fieldset>
-							</div>
-							<div class="col-sm-3">
-								<fieldset>
-									<input type="text" name="date" placeholder="Data da inicial Reserva *" class="datepicker" required data-validation-required-message="Preencha o Campo Data Inicial da Reserva." id="date"/>
-								</fieldset>
-								<fieldset required>
-									<input type="text" name="dateFinal" placeholder="Data Final da Reserva *" class="datepicker" required data-validation-required-message="Preencha o Campo Data Final da Reserva ." id="dateFinal"/>
-								</fieldset>
-							</div>
-							<div class="col-sm-3">
-								<fieldset>
-									<select  id="carros">
-										<option name="1" value="1" selected>1</option>
-										<option name="2" value="2">2</option>
-										<option name="3" value="3">3</option>
-										<option name="4" value="4">4</option>
-									</select>
-								</fieldset>
-									<fieldset>
-										<input type="number" name="numero" placeholder="Nº Telefone" required="este campo é obrigatorio" id="numero" />
-									</fieldset>
-								</div>
-
-						<div class="row">
-							<div class="col-sm-12">
-								<fieldset>
-									<textarea name="mensagem" placeholder="Mensagem" id="mensagem"></textarea>
-								</fieldset>
-							</div>
-
-						<div class="row">
-							<div class="col-sm-12 text-center">
-								<button class="btn btn-primary" style="margin-bottom:25px;">FAÇA A SUA RESERVA</button>
-							</div>
-						</div>
-						</form>
-					</div>
-
-
-						<!-- Previsão do valor -->
-						<h2 style="text-align:center;">Simule o Valor a Pagar</h2>
-
-						<div class="row">
-							<br>
-							<div class="col-sm-12">
-								<div class="row">
 							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" value="19950" title="clique para preencher o valor">
 								<fieldset class="car-type">
 									<input type="checkbox" name="car-type" id="econo" />
@@ -328,43 +212,99 @@ include_once  'send_email/send_email_rent.php';
 									<label for="classic"><img src="icon/classico.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-20px;"> Clássico </p> <p style="margin-top:-25px;"> A partir 57.750 AKZ </p> </label>
 								</fieldset>
 							</div>
-							</div>
 						</div>
 
-						<div class="col-sm-4">
-							<fieldset>
-								Valor Da Categoria <input type="text" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" />
-							</fieldset></div>
-								<div class="col-sm-4">
+								<!-- /******************/  Previsão do valor -->
+								<h2 style="text-align:center;">Simule o Valor a Pagar</h2>
+
+								<div class="row">
+									<br>
+								<div class="col-sm-12">
+										<div class="row">
+
+								<div id="resultado">
+								</div>
+								<div class="col-sm-6">
+									<fieldset>
+										Valor Da Categoria <input type="number" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" />
+									</fieldset></div>
+										<div class="col-sm-6">
+										<fieldset>
+											Numero de Dias<input type="number" name="numeroDeDias" id="numeroDeDias" placeholder="numero De Dias" />
+										</fieldset></div>
+
+								</div>
+
+
+								<div class="row">
+									<div class="col-sm-12 text-center">
+										<input type="button" class="btn btn-primary" id="prevButton" value="Previsão" >
+									</div>
+								</div>
+								<br>
+								<!-- /*****************/ -->
+						<div class="row">
+							<div id="erro">
+				        <?php echo $erro.$sucessosms; ?>
+				      </div>
+							<h2 style="text-align:center;">Preencha o formulario</h2>
+							<div class="col-sm-3">
 								<fieldset>
-									Numero de Dias<input type="number" name="numeroDeDias" id="numeroDeDias" placeholder="numero De Dias" />
-								</fieldset></div>
-								<div class="col-sm-4">
-								<fieldset >
-									Numero de Carros <select name="carros"  id="carros">
-										<option>Carros</option>
-										<option  value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-									</select>
+									<input type="text" name="nome" placeholder="Nome *" required="Preencha o Campo nome." id="nome"/>
+								</fieldset>
+								<fieldset>
+									<input type="email" name="email" placeholder="Email *" required data-validation-required-message="Preencha o Campo Email." id="email" />
 								</fieldset>
 							</div>
-						</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="marca" placeholder="Valor da Categoria *" required data-validation-required-message="Preencha o Campo Marca do carro." id="marca"/>
+								</fieldset>
+								<fieldset>
+										<input type="text" name="time" placeholder="Hora do aluguel *" class="timepicker" required  id="time"/>
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<input type="text" name="date" placeholder="Data da inicial Reserva *" class="datepicker" required data-validation-required-message="Preencha o Campo Data Inicial da Reserva." id="date"/>
+								</fieldset>
+								<fieldset required>
+									<input type="text" name="dateFinal" placeholder="Data Final da Reserva *" class="datepicker" required data-validation-required-message="Preencha o Campo Data Final da Reserva ." id="dateFinal"/>
+								</fieldset>
+							</div>
+							<div class="col-sm-3">
+								<fieldset>
+									<select  id="carros">
+										<option name="1" value="1" selected>1</option>
+										<option name="2" value="2">2</option>
+										<option name="3" value="3">3</option>
+										<option name="4" value="4">4</option>
+									</select>
+								</fieldset>
+									<fieldset>
+										<input type="number" name="numero" placeholder="Nº Telefone" required="este campo é obrigatorio" id="numero" />
+									</fieldset>
+								</div>
 
+						<div class="row">
+							<div class="col-sm-12">
+								<fieldset>
+									<textarea name="mensagem" placeholder="Mensagem" id="mensagem"></textarea>
+								</fieldset>
+							</div>
 
 						<div class="row">
 							<div class="col-sm-12 text-center">
-								<button type="submit" class="btn btn-primary" id="sendButton"  onclick="pagar()">Previsão</button>
+								<button type="submit" class="btn btn-primary" style="margin-bottom:25px;">FAÇA A SUA RESERVA</button>
 							</div>
 						</div>
-
-
+						</form>
+					</div>
 				</div>
 			</section>
 			<!--Promo end -->
-
 		</div>
+
 		<!-- Content end -->
 
 		<!-- Footer start -->
@@ -437,32 +377,68 @@ include_once  'send_email/send_email_rent.php';
 		<script src="js/settings.js"></script>
 
 		<script type="text/javascript">
-		/*var previsaoDoValor;
-		function pagar(previsaoDoValor){
-			var valorDaCategoria = parseInt(document.getElementById("valorDaCategoria").value);
-			var numeroDeDias = parseInt(document.getElementById("numeroDeDias").value);
-			var carros = parseInt(document.getElementById("carros").value);
+		// pure js to find to  simulate
+		//var previsaoDoValor;
+		//var resultado = "";
+		// document.getElementById("prevButton").onclick = pagar;
+		// function pagar(previsaoDoValor){
+		// 	var valorDaCategoria = parseInt(document.getElementById("valorDaCategoria").value);
+		// 	var numeroDeDias = parseInt(document.getElementById("numeroDeDias").value);
+		// 	// var carros = parseInt(document.getElementById("carros").value);
+		//
+		//
+		// 	if (typeof valorDaCategoria && numeroDeDias && carros !== 'null'){
+		//
+		// 	//var taxaDeAluguer = 1;
+		// 	 previsaoDoValor = valorDaCategoria * numeroDeDias;
+		// 		if(typeof  previsaoDoValor !== 'undefined'){
+		//
+		// 			//alert("O valor da Previsão  : " + previsaoDoValor);
+		// 			//class="close" data-dismiss="alert" aria-label="close"></a>
+		// 			resultado = "o valor da previsão sem caução incluida é : " + previsaoDoValor;
+		// 			document.getElementById("resultado").innerHTML = "<div class='alert alert-success alert-dismissable' role='alert' class='close' aria-label='Close'><p><strong>" + resultado + "</strong></p><a href='javascript:void(0)'><span class='close fechar'>&times;</span></a></div>"
+		// 			return previsaoDoValor;
+		// 		}
+		//
+		// 	}else {
+		// 		alert("Dados errados");
+		// 		document.getElementById("resultado").innerHTML = "<div class='alert alert-danger role=alert'><p><strong>Dados errados</strong></p></strong></p> <a href='javascript:void(0)' ><span class='close fechar' >&times;</span></a></div>";
+		//
+		// 	}
+		// 	//return pagar();
+		//
+		// }
 
+		/*********************************************making with jquery***************************************/
+			$(function(){
+				var valorDaCategoria = $("#valorDaCategoria").val();
 
-			if (typeof valorDaCategoria && numeroDeDias && carros !== 'null'){
+				$("#prevButton").click(function(){
+					var valorDaCategoria = $("#valorDaCategoria").val();
+					var numeroDeDias =  $("#numeroDeDias").val();
+					if(valorDaCategoria === "null" && numeroDeDias == "null" && valorDaCategoria == "" && numeroDeDias == "" ) {
+						// if variable iqual zero when clicked the button make action for it
+						alert("dados errados");
 
-			//var taxaDeAluguer = 1;
+					}
+					else if  (valorDaCategoria !== "null" && numeroDeDias !== "null" && valorDaCategoria !== "" && numeroDeDias !== "" ) {
+               var resultado = valorDaCategoria * numeroDeDias;
+							 $("#resultado").html("<div class='alert alert-success alert-dismissable' role='alert' class='close' aria-label='Close'><p><strong> O valor Simulado sem caução incluida" + resultado + "</strong></p><a href='javascript:void(0)'><span class='close fechar'>&times;</span></a></div>")
 
-			 previsaoDoValor = (valorDaCategoria*numeroDeDias) * carros;
-				if(typeof  previsaoDoValor !== 'undefined'){
+							alert(valorDaCategoria);
+							alert(numeroDeDias);
+							alert(resultado);
 
-					alert("O valor da Previsão  : " + previsaoDoValor);
-					return previsaoDoValor;
+					}
+					// alert(valorDaCategoria);
+					// alert($("#valorDaCategoria").val());
+					// console.log(valorDaCategoria);
+				});
+			});
 
+						//alert(valorDaCategoria);
 
-				}
-
-			}else {
-				alert("Dados errados");
-			}
-			//return pagar();
-
-		}*/
+		/********************************************end of simular valor jquery******************************/
 
 </script>
 <script type="text/javascript">
@@ -509,7 +485,7 @@ $("form").submit(function(e){
 
   }
   if (erro != "") {
-    $("#erro").html('<div class="alert alert-danger role=alert"><p><strong>Existem erros no seu formulario:</strong></p>' + erro + '</div>');
+    $("#erro").html('<div class="alert alert-danger role=alert"><p><strong>Existem erros no seu formulario:</strong></p>' + erro + '  <a href="javascript:void(0)" class="close">&times;</a></div>');
     return false;
   }else {
     return true;
@@ -524,7 +500,8 @@ $("form").submit(function(e){
 			var panelId = $(this).attr('data-panelid')
 				var value = $(this).attr('value');
 				$('#'+panelId).toggle();
-							$('#valorDaCategoria ').val(value);
+							$('#valorDaCategoria').val(value);
+							$('#marca').val(value);
 
 			//alert(value);
 
@@ -540,25 +517,39 @@ $("form").submit(function(e){
 	// $(document).ready(function(){
 	//         tooltip();
 	//     });
-
+/***********************************************************************/
 	// autoplay owl
 	/*AUTOPLAY FOR OWL */
+	// smartSpeed: 1000,
 	var owl = $('.owl-carousel');
 	owl.owlCarousel({
 	    items:1,
+			dots: false,
 	    loop:true,
 	    margin:10,
 	    autoplay:true,
-	    autoplayTimeout:7000,
+			navText: [
+					"<i class='ion-ios-arrow-left'></i>",
+					"<i class='ion-ios-arrow-right'></i>"
+			],
+	    autoplayTimeout:5000,
+			autoplaySpeed: 3000,
+			smartSpeed: 2000,
 	    autoplayHoverPause:true
 	});
 	$('.play').on('click',function(){
-	    owl.trigger('play.owl.autoplay',[7000])
+	    owl.trigger('play.owl.autoplay',[5000])
 	})
 	$('.stop').on('click',function(){
 	    owl.trigger('stop.owl.autoplay')
 	})
 
+/**************************************************************************/
+//hide the results on click
+$(".alert").on('click', function(){
+	alert("fechar");
+	$(".alert").fadeOut();
+});
 </script>
 
 	</body>
