@@ -8,9 +8,9 @@ if ($_POST) {
   if (!$_POST['nome']) {
     $erro .= "O campo nome é obrigatorio preencha-o .<br>";
   }
-    if (!$_POST['numero']) {
-    $erro .= "O campo numero de telefone é obrigatorio preencha-o .<br>";
-    }
+  // if (!$_POST['numero']) {
+  //   $erro .= "O campo numero é obrigatorio preencha-o .<br>";
+  // }
   if (!$_POST['mensagem']) {
     $erro .= "O campo de mensagem é obrigatorio preencha-o .<br>";
   }
@@ -18,7 +18,7 @@ if ($_POST) {
       $erro .= "O campo Marca do Carro é obrigatorio preencha-o .<br>";
    }
    if (!$_POST['carros']) {
-     $erro .= "O campo carro é obrigatorio preencha-o .<br>";
+     $erro .= "O campo numero é obrigatorio preencha-o .<br>";
    }
    if (!$_POST['date']) {
      $erro .= "O campo Data Inicial da Reserva é obrigatorio preencha-o .<br>";
@@ -49,7 +49,7 @@ if ($_POST) {
     $dateFinal = "Data Final da Reserva: " .$_POST['dateFinal'];
     $time = "A Reserva começa a partir das " .$_POST['time']. " Horas";
 
-    $subject = "Mensagem da pagina Rent a Car: " .$_POST['mensagem'];
+    $subject = $_POST['mensagem'];
     $mailBody = "Nome: $nome\n $numero\n $marca\n $carros\n $date\n $dateFinal\n $time";
     if(mail($emailTo, $headers, $mailBody, $subject)){
       $sucessosms = '<div class="alert alert-success alert-dismissable" role="alert">

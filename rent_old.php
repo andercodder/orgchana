@@ -275,17 +275,15 @@ include_once  'send_email/send_email_rent.php';
 							</div>
 							<div class="col-sm-3">
 								<fieldset>
-									<input type="number" name="carros" placeholder="Nº de carros" id="carros" />
-
-									<!-- <select  id="carros" name="carro">
+									<select  id="carros" name="carro">
 										<option name="1" value="1" selected>1</option>
 										<option name="2" value="2">2</option>
 										<option name="3" value="3">3</option>
-										<option name="4" value="4">4</option> -->
+										<option name="4" value="4">4</option>
 									</select>
 								</fieldset>
 									<fieldset>
-										<input type="number" name="numero" placeholder="Nº Telefone" id="numero" />
+										<input type="number" name="numero" placeholder="Nº Telefone" required="este campo é obrigatorio" id="numero" />
 									</fieldset>
 								</div>
 
@@ -471,7 +469,7 @@ $("form").submit(function(e){
 
   }
 	if ($("#dateFinal").val() == "") {
-    erro += "O Campo data Final da Reserva  é obrigatorio Preencha-o<br>";
+    erro += "O Campo data Final da Reserva Numero é obrigatorio Preencha-o<br>";
 
   }
 	if ($("#carros").val() == "") {
