@@ -1,0 +1,247 @@
+<?php
+/*using php to send email validation*/
+include_once  'send_email/send_email_rent.php';
+?>
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="description" content="organizações Chana - Rent a car">
+		<meta name="author" content="DSI - orgchana">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+		<title>rent</title>
+		<link rel="shortcut icon" href="img/favicon.png">
+
+		<!-- Main Stylesheet -->
+		<link href="css/style.css" rel="stylesheet">
+		<style>
+		.booking-form .car-type label {
+			background: #14387E ;
+
+		}
+
+		.fechar{
+			text-align: right;
+			margin-top: -40px;
+		}
+    .test:after {
+      content: '\2807';
+      font-size: 50px;
+      border-radius: 50%;
+      margin-right: -150px;
+  }
+		</style>
+	</head>
+
+	<body>
+
+		<!-- Content start -->
+		<div class="content">
+
+			<!-- Main start -->
+			<section class="intro" >
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="title">
+								<h1>Parque</h1>
+								<h6></h6>
+							</div>
+							<p class="text-center"><big></big></p>
+							<hr class="blank">
+						</div>
+					</div>
+
+						<div class="row booking-form">
+
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" title="seleciona estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="econo" />
+
+									<label for="econo"><img src="iconP/1.png"  style="margin-top:-20px;"><p style="margin-top:-10px;"> A1 </p> <p style="margin-top:-20px;" class="test"> </p></label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" title="seleciona Estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
+									<label for="suv"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> A2 </p> <p style="margin-top:-25px;"> </p> </label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" title="seleciona Estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
+									<label for="minivan"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;" >A3</p><p style="margin-top:-25px;">  </p> </label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" title="seleciona Estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
+									<label for="wagon"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> A4 </p> <p style="margin-top:-25px;">  </p></label>
+								</fieldset>
+							</div>
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" title="seleciona Estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
+									<label for="limousine"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> A5 </p> <p style="margin-top:-25px;"> </p> </label>
+								</fieldset>
+							</div>
+
+							<div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" title="seleciona Estado">
+								<fieldset class="car-type">
+									<input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
+									<label for="classic"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> A6 </p> <p style="margin-top:-25px;">  </p> </label>
+								</fieldset>
+                  </div>
+                </div>
+        <div class="row booking-form">
+
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="econo" />
+
+              <label for="econo"><img src="iconP/1.png"  style="margin-top:-20px;"><p style="margin-top:-10px;"> B1 </p> <p style="margin-top:-20px;"> </p></label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
+              <label for="suv"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> B2 </p> <p style="margin-top:-25px;"> </p> </label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
+              <label for="minivan"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;" >B3</p><p style="margin-top:-25px;">  </p> </label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
+              <label for="wagon"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> B4 </p> <p style="margin-top:-25px;">  </p></label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
+              <label for="limousine"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> B5 </p> <p style="margin-top:-25px;"> </p> </label>
+            </fieldset>
+          </div>
+
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
+              <label for="classic"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> C6 </p> <p style="margin-top:-25px;">  </p> </label>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row booking-form">
+
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="econo" />
+
+              <label for="econo"><img src="iconP/1.png"  style="margin-top:-20px;"><p style="margin-top:-10px;"> C1 </p> <p style="margin-top:-20px;"> </p></label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
+              <label for="suv"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> C2 </p> <p style="margin-top:-25px;"> </p> </label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
+              <label for="minivan"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;" >C3</p><p style="margin-top:-25px;">  </p> </label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
+              <label for="wagon"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> C4 </p> <p style="margin-top:-25px;">  </p></label>
+            </fieldset>
+          </div>
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
+              <label for="limousine"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> C5 </p> <p style="margin-top:-25px;"> </p> </label>
+            </fieldset>
+          </div>
+
+          <div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" title="seleciona estado">
+            <fieldset class="car-type">
+              <input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
+              <label for="classic"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> C6 </p> <p style="margin-top:-25px;">  </p> </label>
+            </fieldset>
+          </div>
+      </div>
+      <div class="row booking-form">
+
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel1" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="econo" />
+
+            <label for="econo"><img src="iconP/1.png"  style="margin-top:-20px;"><p style="margin-top:-10px;"> D1 </p> <p style="margin-top:-20px;"> </p></label>
+          </fieldset>
+        </div>
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel2" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="suv" class="panel" data-panelid="panel2" />
+            <label for="suv"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> D2 </p> <p style="margin-top:-25px;"> </p> </label>
+          </fieldset>
+        </div>
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel3" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="minivan" class="panel" data-panelid="panel3" value="57750" />
+            <label for="minivan"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;" >D3</p><p style="margin-top:-25px;">  </p> </label>
+          </fieldset>
+        </div>
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel4" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="wagon" class="panel" data-panelid="panel4" />
+            <label for="wagon"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> D4 </p> <p style="margin-top:-25px;">  </p></label>
+          </fieldset>
+        </div>
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel5" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="limousine" class="panel" data-panelid="panel5" />
+            <label for="limousine"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> D5 </p> <p style="margin-top:-25px;"> </p> </label>
+          </fieldset>
+        </div>
+
+        <div class="col-xs-6 col-sm-2 panel" data-panelid="panel6" title="seleciona estado">
+          <fieldset class="car-type">
+            <input type="checkbox" name="car-type" id="classic" class="panel" data-panelid="panel6" />
+            <label for="classic"><img src="iconP/1.png" alt=""style="margin-top:-20px;"> <p style="margin-top:-10px;"> D6 </p> <p style="margin-top:-25px;">  </p> </label>
+          </fieldset>
+        </div>
+    </div>
+  </section>
+  <div class="test"></div>
+
+
+
+
+		<!-- Javascripts start -->
+
+		<script src="js/jquery-3.1.1.js"></script>
+		 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/picker.js"></script>
+		<script src="js/picker.date.js"></script>
+		<script src="js/picker.time.js"></script>
+		<script src="js/uber-google-maps.js"></script>
+		<script src="js/settings.js"></script>
+
+	</body>
+</html>
