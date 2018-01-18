@@ -136,64 +136,7 @@ include_once 'send_email/send_email_oficina.php';
 							<h6>Luzes</h6>
   					</div>
 					</div>
-					<!-- <div class="row">
-						<div class="col-sm-12">
-							<hr class="thick">
-							<div class="title">
-								<h1>MECâNICOS</h1>
-								<h6>Qualificados!</h6>
-							</div>
-							<ul class="mechanics inline four-columns">
-								<li>
-									<img src="http://placehold.it/150x150" alt="" />
-									<h6>Alan Byrd</h6>
-									<div class="hover">
-										<ul>
-											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
-											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<img src="http://placehold.it/150x150" alt="" />
-									<h6>Ross Bennett</h6>
-									<div class="hover">
-										<ul>
-											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
-											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<img src="http://placehold.it/150x150" alt="" />
-									<h6>Tommie Armstrong</h6>
-									<div class="hover">
-										<ul>
-											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
-											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
-										</ul>
-									</div>
-								</li>
-								<li>
-									<img src="http://placehold.it/150x150" alt="" />
-									<h6>Daryl Parsons</h6>
-									<div class="hover">
-										<ul>
-											<li><a href="http://facebook.com"><i class="ion-social-facebook"></i></a></li>
-											<li><a href="http://twitter.com"><i class="ion-social-twitter"></i></a></li>
-										</ul>
-									</div>
-								</li>
 
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!--Main end -->
-
-			<!-- Garage map start --
-			<div class="map" id="garage-map">
-			</div>
 			<!--Garage map end -->
 
 			<!-- fotos -->
@@ -244,45 +187,6 @@ include_once 'send_email/send_email_oficina.php';
 					</div>
 				</div>
 			</section>
-			<!--Main end -->
-			<!-- Main start -->
-			<!-- <section class="intro">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="title">
-							<h1>Oficina Sossego</h1>
-								<ul class="cars inline three-columns">
-								<li>
-									<img src="img/sossego_recepcao.jpg" alt="" />
-									<h6>Recepção</h6>
-								</li>
-								<li>
-									<img src="img/sossego_direccao.jpg" alt="" />
-									<h6>Direcção Técnica</h6>
-								</li>
-								<li>
-									<img src="img/sossego_mecanica.jpg" alt="" />
-									<h6>Mecânica</h6>
-								</li>
-								<li>
-									<img src="img/sossego.jpg" alt="" />
-									<h6>Batechapa e pintura</h6>
-								</li>
-								<li>
-									<img src="img/sossego_alinhamento.jpg" alt="" />
-									<h6>Alinhamento</h6>
-								</li>
-								<li>
-									<img src="http://placehold.it/400x300" alt="" />
-									<h6>Parque</h6>
-								</li>
-							</ul>
-
-						</div>
-					</div>
-				</div>
-			</section> -->
 
 			<!--end of fotos -->
 
@@ -417,7 +321,7 @@ include_once 'send_email/send_email_oficina.php';
 		<script>
     $(function() {
 			$("form").submit(function(e){
-
+        var telMatch = /^\d{9}$/;
 			  var erro = "";
 
 			  if ($("#nome").val() == "") {
@@ -428,6 +332,10 @@ include_once 'send_email/send_email_oficina.php';
 			    erro += "O Campo Nº Telefone é obrigatorio Preencha-o<br>";
 
 			  }
+				if (!$("#telefone").val().match(telMatch))  {
+					erro += "O Campo Nº Telefone deve Ter apenas Nove numeros<br>";
+
+				}
 			  if ($("#email").val() == "") {
 			    erro += "O Campo de Email é obrigatorio Preencha-o<br>";
 

@@ -11,7 +11,7 @@ if (isset($_POST['reservar'])) {
     $erro .= "O campo de email é obrigatorio preencha-o .<br>";
   }
   if (!$_POST['telefone']) {
-     $erro .= "O campo telefone do Carro é obrigatorio preencha-o .<br>";
+     $erro .= "O campo Nº Telefone  é obrigatorio preencha-o .<br>";
   }
   if (!$_POST['tAlternativo']) {
     $erro .= "O campo Telefone Alternativo é obrigatorio preencha-o .<br>";

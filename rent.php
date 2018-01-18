@@ -226,7 +226,7 @@ include_once  'send_email/send_email_rent.php';
 								</div>
 								<div class="col-sm-6">
 									<fieldset>
-										Valor Da Categoria <input type="number" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" />
+										Valor Da Categoria <input type="number" name="valorDaCategoria" id="valorDaCategoria" placeholder="valor Da Categoria" min="19950" />
 									</fieldset></div>
 										<div class="col-sm-6">
 										<fieldset>
@@ -275,7 +275,7 @@ include_once  'send_email/send_email_rent.php';
 							</div>
 							<div class="col-sm-3">
 								<fieldset>
-									<input type="number" name="carros" placeholder="Nº de carros" id="carros" />
+									<input type="number" name="carros" placeholder="Nº de carros" id="carros" min="1" />
 
 									<!-- <select  id="carros" name="carro">
 										<option name="1" value="1" selected>1</option>
@@ -380,78 +380,13 @@ include_once  'send_email/send_email_rent.php';
 		<script src="js/settings.js"></script>
 
 		<script type="text/javascript">
-		// pure js to find to  simulate
-		//var previsaoDoValor;
-		//var resultado = "";
-		// document.getElementById("prevButton").onclick = pagar;
-		// function pagar(previsaoDoValor){
-		// 	var valorDaCategoria = parseInt(document.getElementById("valorDaCategoria").value);
-		// 	var numeroDeDias = parseInt(document.getElementById("numeroDeDias").value);
-		// 	// var carros = parseInt(document.getElementById("carros").value);
-		//
-		//
-		// 	if (typeof valorDaCategoria && numeroDeDias && carros !== 'null'){
-		//
-		// 	//var taxaDeAluguer = 1;
-		// 	 previsaoDoValor = valorDaCategoria * numeroDeDias;
-		// 		if(typeof  previsaoDoValor !== 'undefined'){
-		//
-		// 			//alert("O valor da Previsão  : " + previsaoDoValor);
-		// 			//class="close" data-dismiss="alert" aria-label="close"></a>
-		// 			resultado = "o valor da previsão sem caução incluida é : " + previsaoDoValor;
-		// 			document.getElementById("resultado").innerHTML = "<div class='alert alert-success alert-dismissable' role='alert' class='close' aria-label='Close'><p><strong>" + resultado + "</strong></p><a href='javascript:void(0)'><span class='close fechar'>&times;</span></a></div>"
-		// 			return previsaoDoValor;
-		// 		}
-		//
-		// 	}else {
-		// 		alert("Dados errados");
-		// 		document.getElementById("resultado").innerHTML = "<div class='alert alert-danger role=alert'><p><strong>Dados errados</strong></p></strong></p> <a href='javascript:void(0)' ><span class='close fechar' >&times;</span></a></div>";
-		//
-		// 	}
-		// 	//return pagar();
-		//
-		// }
-
-		/*********************************************making with jquery***************************************/
-			$(function(){
-				var valorDaCategoria = $("#valorDaCategoria").val();
-
-				$("#prevButton").click(function(){
-					var valorDaCategoria = $("#valorDaCategoria").val();
-					var numeroDeDias =  $("#numeroDeDias").val();
-					 if(valorDaCategoria === "" && numeroDeDias === "" /*&& valorDaCategoria === "" && numeroDeDias === ""*/ ) {
-						// if variable iqual zero when clicked the button make action for it
-						$("#resultado").html("<div class='alert alert-success alert-dismissable' role='alert' class='close' aria-label='Close'><p><strong> O Valor da Categoria ou Numero de Dias Esta vazio Preencha-o</strong></p><a href='javascript:void(0)'><span class='close fechar'>&times;</span></a></div>")
-						//alert("dados errados");
-
-					 }
-
-					 if  (valorDaCategoria !== "null" && numeroDeDias !== "null" && valorDaCategoria !== "" && numeroDeDias !== "" ) {
-               var resultado = valorDaCategoria * numeroDeDias;
-							 $("#resultado").html("<div class='alert alert-success alert-dismissable' role='alert' class='close' aria-label='Close'><p><strong> O valor Simulado sem caução incluida " + resultado + "</strong></p><a href='javascript:void(0)'><span class='close fechar'>&times;</span></a></div>")
-
-						//	alert(resultado);
-
-					}else {
-						return false;
-					}
-					return true;
-					// alert(valorDaCategoria);
-					// alert($("#valorDaCategoria").val());
-					// console.log(valorDaCategoria);
-				});
-			});
-
-						//alert(valorDaCategoria);
-
-		/********************************************end of simular valor jquery******************************/
 
 </script>
 <script type="text/javascript">
 
 // validation form
 $("form").submit(function(e){
-
+  var telMatch = /^\d{9}$/;
   var erro = "";
 
   if ($("#nome").val() == "") {
@@ -486,6 +421,10 @@ $("form").submit(function(e){
     erro += "O Campo Nº Telefone é obrigatorio Preencha-o<br>";
 
   }
+	if (!$("#numero").val().match(telMatch))  {
+		erro += "O Campo Nº Telefone deve Ter apenas Nove numeros<br>";
+
+	}
   if ($("#mensagem").val() == "") {
     erro += "O Campo mensagem é obrigatorio Preencha-o<br>";
 

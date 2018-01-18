@@ -306,7 +306,7 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 						<div class="col-sm-4 text-center">
 							<p><i class="icon-road-pin icon-circle icon-big"></i></p>
 							<h6>Em qualquer lugar</h6>
-							<p>Estamos onde você esta lá, centro da cidade, novas centralidades,  centros comerciais, nos musseques, onde você chamar a gente chega lá.</p>
+							<p>Estamos onde você esta, centro da cidade, novas centralidades,  centros comerciais, nos musseques, onde você chamar a gente chega lá.</p>
 							<p>&nbsp;</p>
 						</div>
 						<div class="col-sm-4 text-center">
@@ -318,7 +318,7 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 						<div class="col-sm-4 text-center">
 							<p><i class="icon-business-man-3 icon-circle icon-big"></i></p>
 							<h6>Negócios</h6>
-							<p>Preocupado com estacionamento no centro da Cidade? deixe que a nós demos boleia até ao seu local de serviço, eficiência no transporte, pontualidade garantida.</p>
+							<p>Preocupado com estacionamento no centro da Cidade? deixe que nós demos boleia até ao seu local de serviço, eficiência no transporte, pontualidade garantida.</p>
 							<p>&nbsp;</p>
 						</div>
 					</div>
@@ -573,7 +573,7 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 								$("#reservaBtn").click(function(){
 									// reclamacõesBtn.disabled=true;
 									$("#reservaForm").submit(function(e){
-
+										var telMatch = /^\d{9}$/;
 										var erro = "";
 
 										if ($("#nome").val() == "") {
@@ -584,12 +584,18 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 										 erro += "O Campo de Email é obrigatorio Preencha-o<br>";
 
 									 }
-										if ($("#tAlternativo").val() == "") {
+									 if ($("#telefone").val() == "") {
+								     erro += "O Campo Nº Telefone é obrigatorio Preencha-o<br>";
+
+								   }
+			  						if ($("#tAlternativo").val() == "") {
 											erro += "O Campo Telefone Alternativo é obrigatorio Preencha-o<br>";
 
 										}
+										if (!$("#telefone, #tAlternativo").val().match(telMatch))  {
+											erro += "O Campo Nº Telefone deve Ter apenas Nove numeros<br>";
 
-
+										}
 										if ($("#partida").val() == "") {
 											erro += "O Campo de partida é obrigatorio Preencha-o<br>";
 
@@ -631,6 +637,7 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 								// form reclamacões
 								$("#enviarReclamacoesBtn").click(function(){
 									$("#reclamacoesForm").submit(function(e){
+										var telMatch = /^\d{9}$/;
 										 var erroRecl = "";
 
 										 if ($("#nomeReclamacoes").val() == "" ) {
@@ -642,6 +649,10 @@ https://web.facebook.com/MEU-TAXI-706842149407828/" target="_blank">Facebook</a>
 										 if ($("#telefoneReclamacoes").val() == "" ) {
 											 erroRecl += "o campo Telefone esta vazio Preencha-o<br>";
 										 }
+										 if (!$("##telefoneReclamacoes").val().match(telMatch))  {
+								   		erro += "O Campo Nº Telefone Alternativo deve Ter apenas Nove numeros<br>";
+
+								   	}
 										 if ($("#mensagemReclamacoes").val() == "" ) {
 											 erroRecl += "o campo Mensagem esta vazio Preencha-o<br>";
 										 }
