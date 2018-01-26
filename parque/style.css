@@ -1,0 +1,73 @@
+html,body{
+   background-color: #f5f5f5;
+   height: 100%;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+
+  }
+.card{
+  width: 98%;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  margin-top: 3em;
+  text-align: center;
+ -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+ -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.heading{
+  margin: 0 auto;
+  margin-top: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+}
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  /*display: flex;*/
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="number"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/*.elementsLeft{
+  display: inline-block;
+}*/
+p{
+  display: inline-block;
+}
