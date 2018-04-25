@@ -168,6 +168,9 @@
 					textarea:focus {
 									outline: #ffce00 auto 5px;
 							}
+                                                        ::selection {
+                                                            background: #ffeb99;
+                                                        }
 
 
 

@@ -464,10 +464,10 @@ $("form").submit(function(e){
 	// $(document).ready(function(){
 	//         tooltip();
 	//     });
-/***********************************************************************/
+/////////////////////////////////////////
 	// autoplay owl
-	/*AUTOPLAY FOR OWL */
-	// smartSpeed: 1000,
+	// AUTOPLAY FOR OWL
+	// smartSpeed: 1000,x
 	var owl = $('.owl-carousel');
 	owl.owlCarousel({
 	    items:1,
@@ -482,7 +482,7 @@ $("form").submit(function(e){
 	    autoplayTimeout:5000,
 			autoplaySpeed: 3000,
 			smartSpeed: 2000,
-	    autoplayHoverPause:true
+	    autoplayHoverPause:false
 	});
 	$('.play').on('click',function(){
 	    owl.trigger('play.owl.autoplay',[5000])
@@ -491,7 +491,7 @@ $("form").submit(function(e){
 	    owl.trigger('stop.owl.autoplay')
 	})
 
-/**************************************************************************/
+
 //hide the results on click
 $("#resultado").on('click', function(){
 		$("#resultado").fadeOut();

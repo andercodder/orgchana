@@ -2701,7 +2701,7 @@
 	 */
 	var Navigation = function(carousel) {
 		/**
-		 * Reference to the core.
+		 * Reference to the core. 
 		 * @protected
 		 * @type {Owl}
 		 */
